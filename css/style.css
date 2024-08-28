@@ -1,0 +1,480 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+hr{
+    width: 85%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* estylos para la bara vertica */
+/* Estilo para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+::-webkit-scrollbar-track {
+    background: #000000; /* Color de fondo de la pista */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #f7b741; /* Color de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados de la barra de desplazamiento */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ee7d13; /* Color de la barra de desplazamiento al pasar el cursor por encima */
+}
+
+
+/* STYLOS DEL HEADER */
+header{
+    width: 100%;
+    
+}
+
+/* ******STYLOS DEL LLOS MENU**** */
+
+header .menus{
+    display: flex;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    position: fixed;
+    background-color: rgb(23, 24, 27);
+    z-index: 99;
+}
+
+header .menus .logo{
+    width: 20%;
+    color: #ff9b04;
+    margin-left: 30px;
+}
+header .menus .logo h1{
+    color: #ff9b04;
+}
+header .menus .navegar{
+    display: flex;
+    width: 80%;
+    padding-top: 10px;
+    justify-content: right;
+}
+header .menus ul{
+    width: 55%;
+    display: flex;
+    list-style: none;
+}
+header .menus ul li{
+    width: 30%;
+    text-align: center;
+    padding-top: 7px;
+}
+header .menus ul li a{
+    text-decoration: none;
+   width: 100%;
+   color: #f5f5f5;
+}
+header .menus ul li a:hover{
+   color: #ff8903;
+}
+header .menus .red-menu{
+    width: 10%;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 7px;
+}
+header .menus .red-menu i{
+    margin-left: 7px;
+    margin-right: 7px;
+    font-size: 20px;
+    border-radius: 50%;
+
+}
+
+
+/* ************stylos del baner-carrusel */
+
+.carousel-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 300%;
+    transition: transform 2.0s ease-in-out;
+}
+    
+.carousel-slide img {
+width: 100vw;
+height: 100vh;
+object-fit: cover;
+}
+/* fin carrusel */
+
+/* para los subtitulos */
+
+/*transform: translateY(-50%); */
+.subtitulos {
+position: absolute;
+        top: 40%;
+        left: 0;
+        width: 300%;
+        display: flex;
+        transition: transform 2.0s ease-in-out;
+}
+
+.subtitulos .capas {
+width: 100vw;
+font-size: 1.4rem;
+text-align:center;
+font-family: 'Montserrat', sans-serif;
+color: white;
+margin-top:4%;
+padding-left: 1%;
+}
+
+.subtitulos .capas a{
+    padding: 15PX 30PX;
+    background-color: rgb(247, 135, 7);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+
+}
+.subtitulos .capas a:hover{
+    padding: 15PX 30PX;
+    background-color: rgb(247, 75, 7);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+
+}
+
+.dots {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    display: inline-block; 
+    cursor: pointer;
+    transition: width 0.3s ease-in-out; 
+}
+
+.dot.active {
+    background-color: rgb(111, 206, 243);
+}
+
+/* FIN DE LOS ESTYLOS DEL HEADER */
+
+/* estylos para el nosotros */
+section{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 3%;
+    justify-content: center;
+
+}
+
+ h1{
+    padding-top: 5%;
+    color: rgb(90, 172, 211);
+    width: 83%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    font-size: 2.5em;
+}
+section p{
+    width: 83%;
+    font-size: 1.5em;
+    display: block;
+    margin: 20px auto;
+    color: #646363;
+}
+section .caja{
+    width: 19%;
+    background: rgb(20, 25, 37);
+    border-radius: 70px 0 70px 0;
+    margin-left: 25px;
+    margin-right: 20px;
+    text-align: center;
+    margin-top: 40px;
+    position: relative;
+    overflow: hidden;
+}
+section .caja i{
+    font-size: 7em;
+    color: white;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+section .caja h1{
+    color: white;
+    font-size: 3em;
+    margin-bottom: 70px;
+}
+.superior{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    
+}
+.inferior{
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+}
+.puntSupDer{
+    background-color: #e99a06;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 0%;
+}
+.puntSupIzq{
+    background-color: #e99a06;
+    width: 70px;
+    height: 70px;
+    /* border-radius: 100px 0 0 0; */
+
+}
+
+/* estylos para los cursos */
+
+.cursosInstituo{
+    margin-bottom: 50px;
+}
+.cursosInstituo .texto{
+    width: 83%;
+    font-size: 1.5em;
+    display: block;
+    margin: 20px auto;
+    color: #646363;
+    margin-bottom: 40px;
+}
+
+.cursos{
+    width: 83%;
+    margin: 0 auto;
+}
+.menu {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 0 auto;
+
+    
+}
+button{
+    border: none;
+}
+.menu-item {
+    width: 30%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #dbdbdb;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 7px 7px 0 0px;
+    
+}
+
+.menu-item:hover {
+    background-color: #e0e0e0;
+    border-left: solid 3px rgb(13, 214, 214);
+    border-right: solid 3px rgb(13, 214, 214) ;
+    border-top: solid 3px rgb(13, 214, 214) ;
+}
+.menu-item:hover,
+.menu-item.active {
+    background-color: #e99a06;
+    color: white;
+}
+
+.course-content {
+    display: none;
+    border: solid 1px rgba(81, 58, 87, 0);
+    border-radius: 7px 7px 7px 7px;
+    background-color: rgb(17, 13, 20);
+    padding: 3%;
+}
+
+.course-content .contenidoCurso{
+    display: flex;
+    width: 100%;
+}
+.course-content .contenidoCurso .imagenCurso{
+    width: 50%;
+}
+.course-content .contenidoCurso .imagenCurso img{
+    width: 100%;
+    height: 60vh;
+  border-radius: 0 200px 0 200px;
+}
+.course-content .contenidoCurso .textoCurso{
+    width: 50%;
+    /* display: flex; */
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.course-content .contenidoCurso h1{
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    font-size: 3.9em;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.course-content .contenidoCurso .textoCurso p{
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    width: 90%;
+    margin: 30px auto;
+}
+.course-content .contenidoCurso ul{
+    color: white;
+    width: 85%;
+    font-size: 1em;
+    margin: 30px auto;
+   
+}
+.course-content .contenidoCurso ul li{
+margin-top:10px;
+    list-style:decimal;
+    
+}
+.course-content.active {
+    display: block;
+}
+
+
+/* CONTYACTENOS */
+
+footer{
+    width: 100%;
+    padding: 2%;
+    background-color: #0e101a;
+}
+footer h1{
+    color: white;
+    text-decoration: underline;
+    
+}
+
+footer .redesContac{
+    width: 83%;
+    margin-top: 30px;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+footer .redesContac a{
+    margin-top: 30px;
+    width: 20%;
+    text-decoration: none;
+    color: white;
+    padding: 16px 40px;
+    margin-left: 10px;
+    margin-right: 10px; 
+    font-size: 1.5em;
+    border-radius: 10px;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+footer a i{
+    margin-right: 10px;
+}
+.whatspie{
+    background-color: #20b46f;
+}
+.whatspie:hover{
+    background-color: #117948;
+}
+
+.instpie{
+    background: rgb(245,110,26);
+background: linear-gradient(87deg, rgba(245,110,26,1) 0%, rgba(255,29,87,1) 49%, rgba(133,52,237,1) 100%);
+}
+.instpie:hover{
+    background: rgb(187, 83, 19);
+background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rgb(101, 36, 185) 100%);
+}
+.facbpie{
+    background-color: #0847a5;
+}
+.facbpie:hover{
+    background-color: #07316e;
+}
+.twipie{
+    background-color: #57c4e6;
+}
+.twipie:hover{
+    background-color: #317d94;
+}
+.logopie{
+    position: absolute;
+    left: 90%;
+    bottom: -30%;
+ 
+}
+
+/* copirygt */
+.copyright {
+    text-align: center; /* Centra el texto */
+    padding: 10px; /* Espaciado interno */
+    background-color: #ff9e0c; /* Color de fondo claro */
+    color: #fcfdfd; /* Color del texto */
+    font-size: 1.3em; /* Tamaño de la fuente */
+    
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    header .menus {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carousel-container {
+        height: 60vh;
+    }
+
+    .subtitulos .capas {
+        font-size: 2rem;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

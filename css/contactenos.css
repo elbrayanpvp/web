@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    width: 100%;
+    margin: 0;
+
+}
+header .banner{
+    width: 100%;
+}
+header .banner img{
+    width: 100%;
+    height: 95vh;
+    
+}
+
+section{
+    display: flex;
+    width: 100%;
+}
+
+section .infoContac{
+    display: flex;
+    width: 50%;
+    padding: 3% 7%;
+    flex-wrap: wrap;
+}
+
+section .infoContac .contactar{
+    width: 100%;
+}
+section .infoContac .contactar h1{
+    color: rgb(88, 134, 202);
+    text-align: center;
+    font-size: 3em;
+}
+
+section .infoContac .contactar a{
+    display: block;
+    margin: 20px 0;
+    color: rgb(38, 105, 168);
+    font-size: 1.3em;
+    text-align: center;
+}
+section .infoContac .contactar p{
+    display: block;
+    margin: 20px 0;
+    color: rgb(38, 105, 168);
+    font-size: 1.3em;
+    text-align: center;
+}
+a i{
+    color: rgb(41, 185, 84);
+}
+p i{
+    color: rgb(226, 42, 42);
+}
+.maps{
+    width: 50%;
+    height: 80vh;
+    padding: 2%;
+  
+}
+iframe{
+    width: 100%;
+    height: 75vh;
+    box-shadow: 0 4px 8px rgba(11, 13, 34, 0.4); 
+}

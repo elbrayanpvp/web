@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+body {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.6;
+}
+/* estylos para la bara vertica */
+/* Estilo para navegadores WebKit (Chrome, Safari, Edge) */
+/* Estilo para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+::-webkit-scrollbar-track {
+    background: #151324; /* Color de fondo de la pista */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0795a8; /* Color de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados de la barra de desplazamiento */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #34b6dd; /* Color de la barra de desplazamiento al pasar el cursor por encima */
+}
+
+
+.navegando {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+    background-color: rgba(33, 29, 34, 0.212);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.scrolled {
+    background:rgb(0, 0, 0);
+    opacity: 99%;
+}
+
+.logo{
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+.logo img {
+    width: 130px;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.menu ul li a:hover {
+    color: rgb(253, 156, 37);
+}
+
+/* pie de pagina */
+
+.proveedores{
+    width: 100%;
+    background-color: #f1f3f3;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.proveedores .prov{
+    width: 350px;
+    margin-left: 60px;
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+    height: 150px;
+    border-radius: 7px;
+}
+
+/* pie de pagina */
+
+footer{
+    display: flex;
+    background-color: rgb(11, 6, 19);
+    width: 100%;
+    padding: 1% 5%;
+    
+}
+footer .pieInfo{
+    color: rgb(255, 255, 255);
+    width: 30%;
+    text-align: center;
+}
+footer .pieInfo h1{
+    font-size: 2em;
+    text-decoration: underline;
+}
+footer .pieInfo ul{
+    list-style: none;
+    margin: 0 auto;;
+    margin-top: 10px;
+    text-align: left;
+    width: 50%;
+    
+}
+footer .pieInfo ul li{
+    margin-top: 10px;
+}
+footer .pieInfo ul li a{
+    color: white;
+    text-decoration: none;
+}
+footer .pieInfo ul li a:hover{
+    color: rgb(228, 92, 30);
+}
+
+footer .pieInfo img{
+    width: 100%;
+}
+footer .pieInfo ul li a i{
+    margin-right: 5px;
+    color: #1bb97c;
+    font-size: 25px;
+}
+.copyright {
+    text-align: center; /* Centra el texto */
+    padding: 10px; /* Espaciado interno */
+    background-color: #2b2b2b; /* Color de fondo claro */
+    color: #ffffff; /* Color del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.WhatsApp{
+    width: 100%;
+    position: fixed;
+    bottom: 7%;
+    right: 1%;
+    text-align: right;
+}
+.WhatsApp a{
+    padding: 19px 28px;
+    background-color: rgb(28, 165, 69);
+    text-decoration: none;
+    border-radius: 200px 200px 0 200px;
+    color: white;
+    font-size: 20px;
+}
+.WhatsApp a:hover{
+    background-color: rgb(21, 141, 91);
+    color: white;
+    font-size: 25px;
+}
+.WhatsApp a i{
+    margin-right: 5px;
+    font-size: 30px;
+}

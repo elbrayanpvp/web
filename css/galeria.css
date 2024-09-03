@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    margin: 0;
+
+}
+header .banner{
+    width: 100%;
+}
+header .banner img{
+    width: 100%;
+    height: 95vh;
+}
+
+/* contenido / categorias */
+
+
+section{
+    padding: 3%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+
+}
+
+section .menuGaleria{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+}
+section .menuGaleria button{
+    border: none;
+    width: 30%;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 20px 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(11, 13, 34, 0.4); 
+    
+}
+.categoria:hover {
+    background-color: #b7a2ee; 
+  /* Color en hover */
+}
+
+.categoria-activa {
+    background-color: #b7a2ee; /* Color cuando está activa */
+    font-weight: bold;
+    color: #f0f0f0;
+}
+section .menuGaleria button .categoria{
+   
+    background-color: #d3d7d8; /* Color por defecto */
+    transition: background-color 0.3s;
+    color: #5e5c5c;
+  
+}
+
+
+
+/* estylos de las categorias */
+section .contenidoGaleria{
+    width: 95%;
+    margin: 0 auto;
+    padding: 1.5%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.categorys{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.categorys .maquinas{
+    width: 25%;
+    margin:20px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    
+}
+.categorys .maquinas img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: -8px;
+    cursor: pointer;
+}
+
+.categorys .maquinas h2{
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    background-color: rgb(29, 39, 61);
+    border-radius: 0 0 10px 10px;
+    margin-top: 0;
+    
+}
+/* estylos dl modal, para la imagen */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+}
+
+.modal-content {
+    margin: auto;
+    margin-top: 6%;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}

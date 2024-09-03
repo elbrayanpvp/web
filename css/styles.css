@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* */
+
+body {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.6;
+}
+
+/* estylos para la bara vertica */
+/* Estilo para navegadores WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+::-webkit-scrollbar-track {
+    background: #151324; /* Color de fondo de la pista */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #0795a8; /* Color de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados de la barra de desplazamiento */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #34b6dd; /* Color de la barra de desplazamiento al pasar el cursor por encima */
+}
+
+
+/* estylos para el encabezado */
+.container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden; 
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgb(36, 35, 48) 10%, rgb(43, 43, 54) 14%, rgba(48, 51, 61, 0.753) 37%, rgba(42, 41, 45, 0.397) 54%, rgba(43, 42, 46, 0.068) 62%, rgba(255, 255, 255, 0) 100%);
+}
+
+
+.carrusel{
+    position: relative;
+    overflow: hidden;
+    width: 35%;
+    /* max-width: 800px; */
+    margin-top: 13%;
+    margin-left: 2%;
+    height: 45%;
+}
+.carrusel-contenedor {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.contenido {
+    color: white;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding-left: 7%;
+    padding-right: 6%;
+    
+}
+
+.contenido h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 3em; 
+    margin-bottom: 10px;
+}
+
+.contenido p {
+    font-size: 1.25em;
+    margin-bottom: 20px;
+}
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+
+.boton-empezar {
+    display: inline-block;
+    background: linear-gradient(90deg, rgb(255, 145, 0) 0%, rgb(255, 0, 98) 100%);
+    color: white;
+    font-family: 'Impact', sans-serif;
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 1.8s ease, transform 0.6s ease;
+}
+
+.boton-empezar:hover {
+    background: linear-gradient(90deg, rgb(3, 140, 182) 0%, rgb(134, 3, 112) 100%);
+    transform: scale(1.1);
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    object-fit: cover;
+}
+video::-internal-media-controls-download-button {
+    display: none;
+}
+
+video::-webkit-media-controls-enclosure {
+    display: none;
+}
+
+video::-webkit-media-controls-panel {
+    display: none;
+}
+
+/* comienzo del contenido */
+
+section{
+    padding-top: 20px;
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+}
+section .contenidoInicio{
+    display: flex;
+    width: 100%;
+    padding: 5%;
+    justify-content: center;
+}
+section .contenidoInicio .imagenInicio{
+    width: 50%;
+}
+section .contenidoInicio .imagenInicio img{
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 200px 0 200px 0;
+}
+
+section .contenidoInicio .cont1{
+    width: 50%;
+    padding: 0 70px;
+}
+section .contenidoInicio .cont1 h1{
+    font-size: 55px;
+    text-align: center;
+}
+section .contenidoInicio .cont1 h2{
+    font-size: 35px;
+    color: rgb(116, 116, 116);
+    text-align: center;
+}
+section .contenidoInicio .cont1 p{
+    font-size: 18px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: rgb(31, 16, 112);
+    width: 75%;
+}
+section .contenidoInicio .cont1 ul{
+    font-size: 18px;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: rgb(31, 16, 112);
+    width: 75%;
+}
+section .contenidoInicio .cont1 button{
+    display: block;
+    margin: 0 auto;
+    width: 190px;
+    height: 50px;
+    margin-top: 40px;
+    border: none;
+    background-color: rgba(255, 0, 0, 0);
+}
+section .contenidoInicio .cont1 button a{
+    text-decoration: none;
+    background: linear-gradient(90deg, rgba(97,185,178,1) 22%, rgba(92,57,191,1) 100%);
+    padding: 15px 45px;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    transition: background 1.8s ease, transform 0.6s ease;
+}
+section .contenidoInicio .cont1 button a:hover {
+    background: linear-gradient(90deg, rgb(6, 135, 139) 0%, rgb(88, 5, 64) 100%);
+    transform: scale(1.1);
+}
+
+/* LISTA DE LOS PROVEEDORES DE SERFALAB */
+
+.proveedores{
+    width: 100%;
+    background-color: #f1f3f3;
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.proveedores .prov{
+    width: 350px;
+    margin-left: 60px;
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+    height: 150px;
+    border-radius: 7px;
+}
+
+/* pie de pagina */
+
+footer{
+    display: flex;
+    background-color: rgb(11, 6, 19);
+    width: 100%;
+    padding: 1% 5%;
+    
+}
+footer .pieInfo{
+    color: rgb(255, 255, 255);
+    width: 30%;
+    text-align: center;
+}
+footer .pieInfo h1{
+    font-size: 55px;
+    text-decoration: underline;
+}
+footer .pieInfo ul{
+    list-style: none;
+    margin: 0 auto;;
+    margin-top: 10px;
+    text-align: left;
+    width: 50%;
+    
+}
+footer .pieInfo ul li{
+    margin-top: 10px;
+}
+footer .pieInfo ul li a{
+    color: white;
+    text-decoration: none;
+}
+footer .pieInfo ul li a:hover{
+    color: rgb(228, 92, 30);
+}
+
+footer .pieInfo img{
+    width: 100%;
+}
+footer .pieInfo ul li a i{
+    margin-right: 5px;
+    color: #1bb97c;
+    font-size: 25px;
+}
+.copyright {
+    text-align: center; /* Centra el texto */
+    padding: 10px; /* Espaciado interno */
+    background-color: #2b2b2b; /* Color de fondo claro */
+    color: #ffffff; /* Color del texto */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+.WhatsApp{
+    width: 100%;
+    position: fixed;
+    bottom: 10%;
+    right: 1%;
+    text-align: right;
+}
+.WhatsApp a{
+    padding: 20px 30px;
+    background-color: rgb(33, 207, 85);
+    text-decoration: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+}
+.WhatsApp a:hover{
+    background-color: rgb(33, 207, 135);
+    color: white;
+    font-size: 25px;
+}
+.WhatsApp a i{
+    margin-right: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1600px) {
+
+    .carrusel{
+        position: relative;
+        overflow: hidden;
+        width: 45%;
+        /* max-width: 800px; */
+        margin-top: 5%;
+        height: 55%;
+    }
+    .contenido h1 {
+        font-size: 2em;
+    }
+
+    .boton-empezar {
+        font-size: 1.25em;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navegando {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .contenido {
+        top: 15%;
+    }
+
+    .contenido h1 {
+        font-size: 2em;
+    }
+
+    .boton-empezar {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

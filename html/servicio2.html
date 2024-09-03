@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color: rgb(245, 245, 245);
+    }
+    header{
+        width: 100%;
+        margin: 0;
+
+    }
+    header .banner{
+        width: 100%;
+        position: relative;
+        background-color: rgb(13, 12, 20);
+        height: 70vh;
+        overflow: hidden;
+    }
+    header .banner img{
+        width: 100%;
+     
+        opacity: 50%;
+        
+    }
+    a{
+        color: white;
+    }
+    header .titulo{
+        width: 100%;
+        position: absolute;
+        top: 30%;
+        left: 0%;
+        text-align: center;
+    }
+    header .titulo h1{
+        font-size: 7rem;
+        color: rgb(232, 233, 248);
+    }
+    header .titulo p{
+        font-size: 5rem;
+        color: rgb(204, 216, 226);
+    }
+    section{
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        padding: 50px 50px;
+        justify-content: center;
+    }
+    section .infoServi{
+        width: 60%;
+        padding: 50px;
+        font-size: 1.1rem;
+        color: rgb(16, 21, 66);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section .infoServi ul{
+        width: 96%;
+        margin: 0 auto;
+    }
+    section .imgServ{
+        width: 40%;
+    }
+    section .imgServ img{
+        width: 100%;
+    }
+    section .infoServi a{
+        display: inline-block; /* Convertir el enlace en un elemento en bloque en línea */
+        background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(69,149,252,1) 100%);   
+        text-decoration: none; /* Quitar subrayado */
+        margin-top: 30px; /* Espacio superior */
+        padding: 15px 30px; /* Espaciado interno */
+        border-radius: 30px; /* Bordes redondeados */
+        font-size: 1.2rem; /* Tamaño de fuente */
+        font-weight: bold; /* Peso de la fuente */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+        transition: all 0.3s ease; /* Efecto de transición */
+    }
+    section .infoServi a:hover {
+    background-color: #e64a19; /* Cambiar el color de fondo al pasar el ratón */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Sombra más intensa al pasar el ratón */
+    transform: translateY(-3px); /* Efecto de elevar el botón */
+}
+    section .infoServi a i{
+        margin-right: 10px;
+    }
+    .otrosServi{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .otrosServi .servi{
+        width: 25%;
+        margin: 0 40px;
+        padding: 20px 0;
+        border-radius: 10px;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(11, 13, 34, 0.4); 
+    }
+    .servi h1{
+        font-size: 2.5rem;
+        text-align: center;
+        color: rgb(29, 31, 56);
+    }
+    .servi p{
+        font-size: 2rem;
+        color: rgb(99, 100, 116);
+        text-align: center;
+    }
+    .otrosServi .servi img{
+        width: 80%;
+        border-radius: 100px 0 100px 0;
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="menu-container"></div>
+        <!-- baner -->
+        <div class="banner">
+            <img src="/img/imgDesarrollo.jpg" alt="">
+            <div class="titulo">
+                <h1>DESARROLLO INTEGRAL</h1>
+                <p>DE PROYECTOS</p>
+            </div>
+        </div>  
+    </header>
+
+    <section>
+        <div class="infoServi">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at venenatis nunc. Nullam volutpat sapien non nisi gravida, sit amet luctus urna blandit. Donec vel nulla sapien. Aenean eget nulla quis orci facilisis dignissim. In vel erat massa. Suspendisse in sapien eget mi euismod ultricies non ut justo. Vivamus auctor felis eu augue fermentum, in posuere dolor fermentum. Sed nec ex vitae eros consectetur hendrerit. Phasellus dapibus, ligula non ultrices laoreet, nisi felis fermentum dolor, ac scelerisque turpis nisi ut nisl. Quisque condimentum tincidunt justo nec ullamcorper. Integer blandit, nunc a iaculis tincidunt, ante velit ornare velit, ac finibus nisi libero sit amet felis. Fusce dictum lobortis urna, ut sodales urna suscipit eget. Vivamus non varius lorem.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Integer blandit, nunc a iaculis tincidunt, ante velit ornare velit.Suspendisse in sapien eget mi euismod ultricies non ut justo.Phasellus dapibus, ligula non ultrices laoreet, nisi felis fermentum dolor.Vivamus auctor felis eu augue fermentum, in posuere dolor fermentum.
+                <ul>
+                    <li>Lorem ipsum dolor sit.</li>
+                    <li>consectetur adipiscing</li>
+                    <li>sodales urna suscip</li>
+                    <li>Quisque condimentum tincidunt</li>
+                </ul>
+            </p>
+            <a href=""><i class="fab fa-whatsapp" ></i>Contactar</a>
+        </div>
+        <div class="imgServ">
+            <img src="/img/personaSeñalando.png" alt="">
+        </div>
+    </section>
+    <div class="otrosServi">
+        <a href="/html/servicio1.html"  class="servi">
+            <h1>MANTNIMIENTO ESPECIALIZADO</h1>
+            <p>PARA EQUIPOS DE PREPARACION</p>
+            <img src="/img/imgMantenimiento.jpg" alt="">
+        </a>
+        <a href="/html/servicio3.html"class="servi">
+            <h1>Construcción Sis. Integral</h1>
+            <p>Para Equipos de Preparación</p>
+            <img src="/img/imgConstruccion.jpg" alt="">
+         </a>
+        <a href="/html/servicio4.html" class="servi">
+            <h1>FABRICACIÓN</h1>
+            <p>TEXTO A LLENAR SOBRE FAB.</p>
+            <img src="/img/imgFabricacion.jpg" alt="">
+        </a>
+    </div>
+
+
+    <div id="footer-container"></div>
+    <script src="/js/galeria.js"></script>
+
+</body>
+</html>

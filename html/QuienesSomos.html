@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quienes Somos</title>
+    <link rel="stylesheet" href="/css/styleSomos.css">
+    <style>
+         .nosotros{
+            color: rgb(255, 142, 14);
+        }
+        .galeria,.inicio, .contactenos,.servicio{
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+</div>
+        <header>
+             <!-- menu -->
+             <div id="menu-container"></div>
+                <!-- baner -->
+            <div class="banner">
+                <img src="/img/quienessomos.jpg" alt="">
+            </div>
+         </header>
+         
+         <section>
+            <div class="somos">
+                <h1>SERFALAB S.A.C</h1>
+                <hr>
+                <div class="info">
+                    <p>Iniciamos nuestras operaciones en Agosto del 2017, dedicados al servicio de mantenimiento, instalaciones eléctricas industriales y fabricación de equipos y maquinarias para el servicio de la industria en general (minería, industria textil, alimentos, electricidad, etc) <br><br> .Para la realización de nuestros trabajos contamos con profesionales altamente calificados y con experiencia en el rubro para atenderlos con los más altos estándares de calidad, puntualidad y satisfacer sus necesidades.</p>
+                </div>
+                <div class="imagen">
+                    <img src="/img/quienessomos.jpg" alt="">
+                </div>
+            </div>
+            <div class="MV">
+                <div class="mvision misio">
+                    <h1>MISIÓN</h1>
+                    <i class="fas fa-bullseye"></i>
+                    <p>Satisfacer la necesidad de nuestros clientes realizando un trabajo profesional, de calidad y en el tiempo oportuno.</p>
+                </div>
+                <div class="mvision visio">
+                    <h1>VISIÓN</h1>
+                    <i class="fas fa-eye"></i>
+                    <p>Ser una empresa líder en nuestro rubro en el mercado nacional e internacional a través de la innovación y puntualidad en el servicio prestado.</p>
+                </div>
+            </div>
+         </section>
+
+
+        <!-- pie de pagina -->
+        <div id="footer-container"></div>
+    <script>
+        // Cargar el menú
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('menu-container').innerHTML = data;
+            });
+    
+        // Cargar el pie de página
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+
+            window.onscroll = function() {
+            var menu = document.getElementById("menu");
+            if (window.pageYOffset > 0) {
+                menu.classList.add("scrolled");
+            } else {
+                menu.classList.remove("scrolled");
+            }
+        };
+    </script>
+</body>
+</html>

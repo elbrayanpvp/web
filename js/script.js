@@ -23,91 +23,105 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 ///////
-
 document.addEventListener('DOMContentLoaded', () => {
     const slideContainer = document.querySelector('.carousel-slide');
     const subtitleContainer = document.querySelector('.subtitulos');
     const slides = document.querySelectorAll('.carousel-slide img');
-    const subtitulos = document.querySelectorAll('.subtitulos .capas');
     const dotsContainer = document.querySelector('.dots');
-    let currentIndex = 1; // Empezamos en 1 debido a los clones
+    let currentIndex = 1;
     let slideInterval;
 
-    // Clonar el primer y último elemento para un bucle infinito
-    const firstSlideClone = slides[0].cloneNode(true);
-    const lastSlideClone = slides[slides.length - 1].cloneNode(true);
-    slideContainer.appendChild(firstSlideClone);
-    slideContainer.insertBefore(lastSlideClone, slides[0]);
+    const largeImages = ['img/img1.jpg', 'img/img2.jpg', 'img/img3.jpg', 'img/img4.jpg'];
+    const smallImages = ['img/cambio1.jpg', 'img/cambio2.jpg', 'img/cambio3.jpg','img/cambio4.jpg'];
 
-    const firstSubtitleClone = subtitulos[0].cloneNode(true);
-    const lastSubtitleClone = subtitulos[subtitulos.length - 1].cloneNode(true);
-    subtitleContainer.appendChild(firstSubtitleClone);
-    subtitleContainer.insertBefore(lastSubtitleClone, subtitulos[0]);
-
-    const totalSlides = slides.length + 2; // Incluyendo clones
-
-    // Ajustar el contenedor para los nuevos elementos
-    slideContainer.style.width = `${100 * totalSlides}vw`;
-    subtitleContainer.style.width = `${100 * totalSlides}vw`;
-
-    // Mover el contenedor al primer slide real
-    slideContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
-    subtitleContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
-
-    // Crear los puntos dinámicamente
-    for (let i = 0; i < slides.length; i++) {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (i === 0) dot.classList.add('active'); // El primer punto es activo
-        dot.addEventListener('click', () => goToSlide(i + 1)); // +1 por el clon inicial
-        dotsContainer.appendChild(dot);
+    // Actualizar imágenes según tamaño de pantalla
+    function updateImages() {
+        const imagesToUse = window.innerWidth <= 680 ? smallImages : largeImages;
+        slides.forEach((slide, index) => {
+            slide.src = imagesToUse[index % imagesToUse.length]; // Para asegurar que no exceda la longitud del array
+        });
     }
 
-    const dots = document.querySelectorAll('.dot');
+    // Clonar imágenes para bucle infinito
+    function cloneSlides() {
+        const firstSlideClone = slides[0].cloneNode(true);
+        const lastSlideClone = slides[slides.length - 1].cloneNode(true);
+        slideContainer.appendChild(firstSlideClone);
+        slideContainer.insertBefore(lastSlideClone, slides[0]);
+    }
 
+    // Ajustar ancho del carrusel
+    function adjustCarouselWidth() {
+        const totalSlides = slides.length + 2;
+        slideContainer.style.width = `${100 * totalSlides}vw`;
+        subtitleContainer.style.width = `${100 * totalSlides}vw`;
+        slideContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
+        subtitleContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    }
+
+    // Crear puntos de navegación
+    function createDots() {
+        slides.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i + 1));
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    // Ir a una diapositiva específica
     function goToSlide(index) {
         currentIndex = index;
         updateCarousel();
-        resetInterval(); // Reiniciar el intervalo al cambiar manualmente
+        resetInterval();
     }
 
+    // Actualizar carrusel
     function updateCarousel() {
         slideContainer.style.transition = 'transform 1.0s ease-in-out';
         subtitleContainer.style.transition = 'transform 1.0s ease-in-out';
         slideContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
         subtitleContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
 
+        const dots = document.querySelectorAll('.dot');
         dots.forEach(dot => dot.classList.remove('active'));
-        if (currentIndex === 0) {
-            dots[dots.length - 1].classList.add('active');
-        } else if (currentIndex === slides.length + 1) {
-            dots[0].classList.add('active');
-        } else {
-            dots[currentIndex - 1].classList.add('active');
-        }
+        dots[(currentIndex - 1 + dots.length) % dots.length].classList.add('active');
     }
 
+    // Siguiente diapositiva
     function nextSlide() {
         currentIndex++;
         updateCarousel();
 
         if (currentIndex === slides.length + 1) {
             setTimeout(() => {
-                slideContainer.style.transition = 'none'; // Sin transición
+                slideContainer.style.transition = 'none';
                 subtitleContainer.style.transition = 'none';
                 currentIndex = 1;
                 slideContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
                 subtitleContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
-            }, 1000); // Duración de la transición
+            }, 1000);
         }
     }
 
+    // Reiniciar intervalo de carrusel
     function resetInterval() {
         clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 4000); // Cambia automáticamente cada 4 segundos
+        slideInterval = setInterval(nextSlide, 4000);
     }
 
-    slideInterval = setInterval(nextSlide, 4000); // Comienza el carrusel automático
+    // Inicialización
+    updateImages();
+    cloneSlides();
+    adjustCarouselWidth();
+    createDots();
+    resetInterval();
+
+    window.addEventListener('resize', () => {
+        updateImages();
+        adjustCarouselWidth();
+    });
 
     slideContainer.addEventListener('transitionend', () => {
         if (currentIndex === 0) {
@@ -121,3 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+
+////////////script imagenes
+
+
+

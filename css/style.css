@@ -32,6 +32,14 @@ body {
 
 
 /* STYLOS DEL HEADER */
+h1{
+   color: rgb(90, 172, 211);
+   width: 83%;
+   margin: 0 auto;
+   padding-bottom: 10px;
+   padding-top: 30px;
+   font-size: 2.5em;
+}
 header{
     width: 100%;
     
@@ -39,40 +47,58 @@ header{
 
 /* ******STYLOS DEL LLOS MENU**** */
 
-header .menus{
+header .menus {
     display: flex;
     width: 100%;
-
-    padding-bottom: 5px;
     position: fixed;
-    background-color: rgb(23, 24, 27);
+    background-color: rgba(23, 24, 27, 0); /* Inicialmente transparente */
     z-index: 99;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    align-items: center;
 }
 
-header .menus .logo{
-    width: 20%;
+.scrolled {
+    background: rgb(0, 0, 0) !important; /* Cambia el fondo a negro */
+    opacity: 99%;
+}
+
+
+
+header .menus .logo {
+    width: 10%;
     color: #ff9b04;
     margin-left: 30px;
-    padding-top: 10px;
+    margin: 0; /* Asegúrate de que no haya márgenes extra */
 }
-header .menus .logo h1{
-    color: #ff9b04;
+
+header .menus .logo img{
+    width: 160px;
 }
 header .menus .navegar{
-    display: flex;
-    width: 80%;
-    padding-top: 20px;
-    justify-content: right;
+    display: inline;
+    width: 90%;
 }
 header .menus ul{
-    width: 55%;
+    width:100%;
     display: flex;
     list-style: none;
+    text-align: center;
+    justify-content: right;
 }
 header .menus ul li{
-    width: 30%;
+    width: 12%;
     text-align: center;
-    padding-top: 7px;
+    padding-top: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.menus .icon {
+    display: none;
+    float: right;
+    cursor: pointer;
+    color: #f2f2f2;
+    font-size: 24px;
 }
 header .menus ul li a{
     text-decoration: none;
@@ -83,10 +109,11 @@ header .menus ul li a:hover{
    color: #ff8903;
 }
 header .menus .red-menu{
-    width: 10%;
     color: #e0e0e0;
     text-align: center;
     padding: 4px;
+    
+    display: none;
 }
 header .menus .red-menu i{
     margin-left: 7px;
@@ -97,27 +124,27 @@ header .menus .red-menu i{
 }
 
 
-
-
 /* ************stylos del baner-carrusel */
 
 .carousel-container {
     width: 100%;
-    height: 100vh;
     overflow: hidden;
     position: relative;
+    /* max-height: 600px;  */
 }
 
 .carousel-slide {
     display: flex;
-    width: 300%;
+    width: 400%;
     transition: transform 2.0s ease-in-out;
 }
     
 .carousel-slide img {
-width: 100vw;
-height: 100vh;
+width: 100%;
+background-size: cover;
 object-fit: cover;
+height: auto; /* Asegura que la altura de las imágenes sea automática para ser responsiva */
+
 }
 /* fin carrusel */
 
@@ -126,11 +153,14 @@ object-fit: cover;
 /*transform: translateY(-50%); */
 .subtitulos {
 position: absolute;
-        top: 40%;
+        top: 27%;
         left: 0;
-        width: 300%;
+        width: 100%;
         display: flex;
+        flex-wrap: wrap;
         transition: transform 2.0s ease-in-out;
+        transform: translateY(-50%); /* Centramos los subtítulos verticalmente */
+       
 }
 
 .subtitulos .capas {
@@ -152,12 +182,7 @@ padding-left: 1%;
 
 }
 .subtitulos .capas a:hover{
-    padding: 15PX 30PX;
     background-color: rgb(247, 75, 7);
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-
 }
 
 .dots {
@@ -172,7 +197,7 @@ padding-left: 1%;
     width: 25px;
     height: 25px;
     margin: 0 5px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 171, 16);
     border-radius: 50%;
     display: inline-block; 
     cursor: pointer;
@@ -189,18 +214,13 @@ padding-left: 1%;
 section{
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 3%;
+    padding-bottom: 3%;
     justify-content: center;
-
+    background-color: #f7f7f7;
+    
 }
-
- h1{
-    color: rgb(90, 172, 211);
-    width: 83%;
-    margin: 0 auto;
-    padding-bottom: 10px;
-    padding-top: 30px;
-    font-size: 2.5em;
+section h1{
+    margin-top: 30px;
 }
 section p{
     width: 83%;
@@ -208,6 +228,7 @@ section p{
     display: block;
     margin: 20px auto;
     color: #646363;
+    
 }
 section .caja{
     width: 19%;
@@ -219,6 +240,7 @@ section .caja{
     margin-top: 40px;
     position: relative;
     overflow: hidden;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 section .caja i{
     font-size: 7em;
@@ -264,6 +286,9 @@ section .caja h1{
 
 .cursosInstituo{
     margin-bottom: 50px;
+}
+.cursosInstituo h1{
+    padding-top: 50px;
 }
 .cursosInstituo .texto{
     width: 83%;
@@ -315,12 +340,13 @@ button{
     border: solid 1px rgba(81, 58, 87, 0);
     border-radius: 7px 7px 7px 7px;
     background-color: rgb(17, 13, 20);
-    padding: 3%;
+    
 }
 
 .course-content .contenidoCurso{
     display: flex;
     width: 100%;
+    padding: 3%;
 }
 .course-content .contenidoCurso .imagenCurso{
     width: 50%;
@@ -370,96 +396,174 @@ margin-top:10px;
 
 /* CONTYACTENOS */
 
-footer{
-    width: 100%;
-    padding: 1% 1%;
+footer {
     background-color: #0e101a;
-}
-footer h1{
     color: white;
-    text-decoration: underline;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #333;
+
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-around;
+    width: 80%;
+
+}
+.contact-info{
+    width: 30%;
+}
+.quick-links{
+    width: 30%;
+}
+
+.contact-info,
+.quick-links {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.contact-info h1,
+.social-media h1,
+.quick-links h2,
+.about h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #f5f5f5;
+}
+
+.contact-info p,
+.about p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    padding: 10px 0;
+}
+
+.quick-links ul li{
+    padding: 10px 0;
+    font-size: 1.1em;
     
 }
 
-footer .redesContac{
-    width: 83%;
-    margin-top: 30px;
-    display: flex;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-}
-footer .redesContac a{
-    margin-top: 30px;
-    width: 20%;
-    text-decoration: none;
-    color: white;
-    padding: 16px 40px;
-    margin-left: 10px;
-    margin-right: 10px; 
-    font-size: 1.5em;
-    border-radius: 10px;
-}
-footer a{
-    color: white;
-    text-decoration: none;
-}
-footer a i{
+.contact-info i {
     margin-right: 10px;
 }
-.whatspie{
-    background-color: #20b46f;
-}
-.whatspie:hover{
-    background-color: #117948;
+
+.quick-links ul {
+    list-style: none;
+    display: block;
+    padding-top: 0;
+    padding-top: 10px;
 }
 
-.instpie{
-    background: rgb(245,110,26);
-background: linear-gradient(87deg, rgba(245,110,26,1) 0%, rgba(255,29,87,1) 49%, rgba(133,52,237,1) 100%);
-}
-.instpie:hover{
-    background: rgb(187, 83, 19);
-background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rgb(101, 36, 185) 100%);
-}
-.facbpie{
-    background-color: #0847a5;
-}
-.facbpie:hover{
-    background-color: #07316e;
-}
-.twipie{
-    background-color: #57c4e6;
-}
-.twipie:hover{
-    background-color: #317d94;
-}
-.logopie{
-    position: absolute;
-    left: 90%;
-    bottom: -30%;
-}
-.logopie h1{
-    font-size: 3em;
+.quick-links ul li {
+    display: block;
 }
 
-/* copirygt */
+.quick-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.quick-links a:hover {
+    color: #ff9e0c;
+}
+
+.social-media {
+    display: inline-block;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.social-link {
+    border: solid 2px  rgb(252, 182, 53);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+.logo {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.logo img {
+    width: 100%;  
+    margin-top: 10px;  
+}
+
 .copyright {
-    text-align: center; /* Centra el texto */
-    padding: 10px; /* Espaciado interno */
-    background-color: #ff9e0c; /* Color de fondo claro */
-    color: #fcfdfd; /* Color del texto */
-    font-size: 1.3em; /* Tamaño de la fuente */
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-size: 1em;
+    border-top: 1px solid #333;
 }
+/* estylos para el boton de whatsApp */
+.inscribirse {
+    position: fixed; /* Hace que el botón flote */
+    bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+    right: 20px; /* Ajusta la distancia desde el lado derecho */
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+    background-color: #25d366; /* Color de fondo similar al de WhatsApp */
+    border-radius: 50px; /* Hace que el botón sea redondeado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto de elevación */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.inscribirse a {
+    display: flex; /* Para alinear el ícono y el texto */
+    align-items: center; /* Alinea verticalmente el ícono y el texto */
+    color: #fff; /* Color del texto blanco */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-size: 16px; /* Tamaño de fuente */
+    padding: 10px 20px; /* Espacio interno para el botón */
+    border-radius: 50px; /* Consistencia con el contenedor */
+}
+
+.inscribirse i {
+    font-size: 24px; /* Tamaño del ícono de WhatsApp */
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+/* Efecto hover */
+.inscribirse:hover {
+    background-color: #1ebe57; /* Color más oscuro en hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta la sombra en hover */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
 
 /* estylos responsivos */
 
 
 @media (max-width: 1690px) {
-    .carousel-container {
-        height: 90vh;
-    }
+    
 
+
+    
     section .caja i{
         font-size: 6em;
         color: white;
@@ -483,27 +587,60 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
         font-size: 1.3em;
         border-radius: 10px;
     }
-    .logopie h1{
-        position: absolute;
+    
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-around;
+        width: 85%;
+    
+    }
+    
+    .contact-info h1,
+    .social-media h1,
+    .quick-links h2,
+    .about h2 {
+        font-size: 2.2em;
+        margin-bottom: 15px;
+        color: #f5f5f5;
+    }
+}
+@media(max-width:1424px){
+    .carousel-slide img{
+        height: 55vh;
+    }
+    .subtitulos{
+        top:20%;
+    }
+        .subtitulos .capas {
+            width: 100vw;
+            font-size: 1.2rem;
+        }
         
-        bottom: -30%;
-        font-size: 2.5em;
-        margin-bottom: 10px;
+        .subtitulos .capas a{
+            padding: 12PX 25PX;
+        
+        }
+}
+@media(max-width:1228px){
+    .carousel-slide img{
+        height: 47vh;
+    }
+    .subtitulos{
+        top:18%;
+    }
+        
+    header .menus{
+        background-color: #0e101ac0;
     }
 }
 
 /* segundo */
 @media (max-width: 1400px) {
-    header .menus ul{
-        width: 56%;
-
-    }
-    header .menus .red-menu{
-        width: 15%;
-    }
-    .carousel-container {
-        height: 80vh;
-    }
+    
+    
     section .caja i{
         font-size: 5em;
         color: white;
@@ -549,15 +686,33 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
     section{
         width: 100%;
     }
-    footer .redesContac a{
-        font-size:1em;
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-around;
+        width: 90%;
+    
     }
-    .logopie h1{ 
-        bottom: -30%;
-        font-size: 2.5em;
+    
+    .contact-info h1,
+    .social-media h1,
+    .quick-links h2,
+    .about h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        color: #f5f5f5;
     }
+    
 }
 @media (max-width: 1100px){
+    .carousel-slide img{
+        height: 40vh;
+    }
+    .subtitulos{
+        top:18%;
+    }
     .puntSupDer{
         width: 50px;
         height: 50px;
@@ -579,11 +734,12 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
         font-size: 2.5em;
     }
     .course-content .contenidoCurso .textoCurso p{
-        font-size: 0.8em;
+        font-size: 1em;
     }
     .course-content .contenidoCurso ul{
-        font-size: 0.8em;
+        font-size: 1em;
     }
+    
     h1{
         width: 83%;
         font-size: 2em;
@@ -594,6 +750,7 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
     }
     .course-content .contenidoCurso .imagenCurso img{
         border-radius: 0 150px 0 150px;
+        height: 98%;
     }
     .cursosInstituo .texto{
         width: 83%;
@@ -603,18 +760,44 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
         color: #646363;
         margin-bottom: 40px;
     }
+    .contact-info p,
+    .about p {
+        margin: 5px 0;
+        font-size: 1em;
+        padding: 10px 0;
+    }
+
+    .quick-links ul li{
+        padding: 10px 0;
+        font-size: 1em;
+        
+    }
 }
 @media (max-width: 900px){
     header .menus ul{
-        width: 80%;
+        width: 90%;
 
     }
-    header .menus .red-menu{
-        width: 20%;
+    .carousel-slide img{
+        height: 34.3vh;
     }
-    .carousel-container {
-        height: 70vh;
+    .subtitulos{
+        top:15%;
     }
+        .subtitulos .capas {
+            width: 100vw;
+            font-size: 1rem;
+        }
+        
+        .subtitulos .capas a{
+            padding: 12PX 25PX;
+        
+        }
+        .dot {
+            width: 20px;
+            height: 20px;
+        }    
+
     .puntSupDer{
         width: 40px;
         height: 40px;
@@ -661,17 +844,35 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
     .course-content .contenidoCurso .imagenCurso img{
         border-radius: 0 100px 0 100px;
     }
-    footer .redesContac a{
-        font-size:0.8em;
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-around;
+        width: 100%;
+    
     }
-    .logopie h1{ 
-        bottom: -30%;
-        font-size: 2em;
+    
+    .contact-info h1,
+    .social-media h1,
+    .quick-links h2,
+    .about h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+        color: #f5f5f5;
     }
-    .logopie{
-        position: absolute;
-        left: 88%;
-        bottom: -30%;
+    .contact-info p,
+    .about p {
+        margin: 5px 0;
+        font-size: 0.9em;
+        padding: 10px 0;
+    }
+
+    .quick-links ul li{
+        padding: 10px 0;
+        font-size: 0.9em;
+        
     }
 }
 
@@ -684,10 +885,25 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
 /* Diseño responsivo */
 @media (max-width: 768px) {
 
-    .carousel-container {
-        height: 60vh;
+    .carousel-slide img{
+        height: 30.5vh;
     }
-
+    .subtitulos{
+        top:17%;
+    }
+        .subtitulos .capas {
+            width: 100vw;
+            font-size: 1rem;
+        }
+        
+        .subtitulos .capas a{
+            padding: 10PX 20PX;
+        
+        }
+        .dot {
+            width: 18px;
+            height: 18px;
+        }    
     section .caja{
         width: 40%;
     }
@@ -709,9 +925,6 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
         font-size: 2.2em;
     }
 
-    .subtitulos .capas {
-        font-size: 2rem;
-    }
     .menu-item {
         font-size: 15px;
         
@@ -749,55 +962,135 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
         
         font-size: 1em; /* Tamaño de la fuente */
     }
-    footer .redesContac a{
-        font-size:0.8em;
+   
+
+        
+    .footer-content {
+        width: 100%;
     }
-    .logopie h1{ 
-        bottom: -30%;
+    .contact-info{
+        width: 50%;
+    }
+    .quick-links{
+        width: 50%;
+
+    }
+    .quick-links ul{
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .contact-info h1,
+    .social-media h1,
+    .quick-links h2,
+    .about h2 {
         font-size: 2em;
+        text-align: center;
+    }
+
+    .contact-info p,
+    .about p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .quick-links ul li{
+        font-size: 1.1em;
+        
+    }
+
+
+    .social-media {
+        width: 70%;
+    }
+
+    .social-link {
+        border-radius: 50%;
+        font-size: 1.5em;
+    }
+
+    .social-link:hover {
+        background-color: #555;
+        transform: scale(1.1);
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
     }
 
 }
+
 @media (max-width: 680px){
+    .carousel-slide img{
+        height: 50vh;
+    }
+    .subtitulos{
+        top:55%;
+    }
+           
     header .menus {
-        flex-direction: column; /* Cambia la orientación a columna */
         align-items: center; /* Centra los elementos */
         padding: 8px 0; /* Reduce el padding */
-        position: relative;
+        display: flex;
+        flex-wrap: wrap;
     }
 
     header .menus .logo {
-        width: 100%; /* Ancho completo para el logo */
+        width: 80%; /* Ancho completo para el logo */
         margin-left: 0; /* Elimina el margen izquierdo */
-        text-align: center; /* Centra el texto */
+        text-align: left; /* Centra el texto */
         padding-top: 0; /* Elimina el padding superior */
+    }
+    .menus .icon {
+        display: flex;
+        width: 20%;
+        justify-content: center;
     }
 
     header .menus .navegar {
         width: 100%; /* Ancho completo para la navegación */
         justify-content: center; /* Centra el contenido */
-        padding-top: 5px; /* Reduce el padding superior */
+        padding-top: 5px; 
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        /* Reduce el padding superior */
+        background-color: #000000;
+        border-radius: 10px;
+    }
+    header .menus .navegar.show{
+        display: block;
+        max-height: 500px; /* Ajusta según el tamaño esperado del menú */
     }
 
     header .menus ul {
-        width: 60%; /* Ancho completo para la lista */
+        width: 100%; /* Ancho completo para la lista */
         flex-direction: row; /* Mantén los elementos en fila */
-        justify-content: center; /* Centra los elementos */
         padding: 0; /* Elimina el padding */
         margin: 0; /* Elimina el margen */
+        flex-wrap: wrap;
+
     }
 
     header .menus ul li {
-        width: auto; /* Ancho automático para cada elemento */
+        width: 100%; /* Ancho automático para cada elemento */
         padding: 0 10px; /* Reduce el espacio lateral */
-        text-align: center; /* Centra el texto */
+        text-align: left; /* Centra el texto */
+        border-bottom: solid rgba(255, 195, 83, 0.438) 1px;
+
     }
 
     header .menus ul li a {
         display: inline-block; /* Muestra los enlaces en línea */
-        padding: 5px 0; /* Añade un poco de padding a los enlaces */
+        padding: 20px;; /* Añade un poco de padding a los enlaces */
         color: #f5f5f5; /* Mantén el color de los enlaces */
-        font-size: 14px; /* Ajusta el tamaño de fuente */
+        font-size: 1.2rem; /* Ajusta el tamaño de fuente */
+    }
+    header .menus ul li:hover {
+        background-color: #646363; /* Ajusta el tamaño de fuente */
     }
 
     header .menus ul li a:hover {
@@ -806,16 +1099,38 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
 
     header .menus .red-menu {
         width: auto; /* Ancho automático para el menú de redes */
-        text-align: center; /* Centra el texto */
-        border: solid;
+        display: block;
+        text-align: left;
+        width: 100%;
     }
 
     header .menus .red-menu i {
         margin: 0 5px; /* Margen horizontal entre íconos */
-        font-size: 18px; /* Tamaño más pequeño para los íconos */
+        font-size: 2rem;
+        color: white;
+        background-color: none;
+        padding: 20px;
+        /* Tamaño más pequeño para los íconos */
     }
-    .carousel-container {
-        height: 50vh;
+    header .menus .red-menu h2 {
+       padding: 20px;
+        
+        /* Tamaño más pequeño para los íconos */
+    }
+    .cursosInstituo .cursos{
+        width: 100%;
+    }
+    .course-content{
+        background-image: url(/img/cur1.jpg);
+        background-size: cover;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    }
+    .course-content .contenidoCurso{
+        background-color: rgb(8, 6, 17);
+        opacity: 86%;
+    }
+    .course-content .contenidoCurso .imagenCurso{
+        display: none;
     }
 
     .puntSupDer{
@@ -842,66 +1157,159 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
         
     }
     
-    footer .redesContac{
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
+    .footer-content {
+        width: 100%;
+        
     }
-    footer .redesContac a{
-        width: 50%;
+    .contact-info{
+        width: 80%;
+    }
+    .quick-links{
+        width: 80%;
+    }
+
+    .contact-info h1,
+    .social-media h1,
+    .quick-links h2,
+    .about h2 {
+        font-size: 2em;
+    }
+
+    .contact-info p,
+    .about p {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    .quick-links{
+        text-align: center;
+    }
+    .quick-links ul li{
+        font-size: 1.1em;
+        
+    }
+
+
+    .social-media {
+        width: 80%;
+    }
+
+    .social-link {
+        border-radius: 50%;
         font-size: 1.5em;
-       
     }
-    .logopie{
-        position: absolute;
-        left: 52%;
-        bottom: 50%;
+
+    .social-link:hover {
+        background-color: #555;
+        transform: scale(1.1);
+    }
+
+    .logo {
+        margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
     }
 }
+
+@media (max-width: 557px){
+    .carousel-slide img{
+        height: 42vh;
+    }
+    .subtitulos{
+        top:55%;
+    }
+        .subtitulos .capas {
+            width: 100vw;
+            font-size: 0.8rem;
+        }
+        
+        .subtitulos .capas a{
+            padding: 10PX 15PX;
+        
+        }
+        .dot {
+            width: 18px;
+            height: 18px;
+        }  
+}
 @media (max-width: 468px){
+    .carousel-slide img{
+        height: 35vh;
+    }
+    .subtitulos{
+        top:48%;
+    }
+        
     header .menus ul {
-        width: 60%; /* Ancho completo para la lista */
+        width: 100%; /* Ancho completo para la lista */
     }
-    .carousel-container {
-        height: 40vh;
-    }
-    section .caja{
-        width: 30%;
-    }
+    
     .puntSupDer{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
        
     }
     .puntSupIzq{
-        width: 30px;
-        height: 30px;
+        width: 40px;
+        height: 40px;
         /* border-radius: 100px 0 0 0; */
     
     }
+   
+    section p{
+        width: 83%;
+        font-size: 1em;
+    }
+
     section .caja{
         border-radius: 30px 0 30px 0;
+        margin-left: 5px;
+        margin-right: 2px;
+        width: 46%;
     }
     section .caja i{
-        font-size: 3em;
+        font-size: 3.5em;
         margin-top: 30px;
-        margin-bottom: 5px;
+        margin-bottom: -10px;
     }
     section .caja h1{
-        font-size: 1em;
-        margin-bottom: 30px;
+        font-size: 1.3em;
+        margin-bottom: 35px;
     }
     .course-content .contenidoCurso h1{
         font-size: 2em;
         margin-bottom: -10px;
     }
+    .cursosInstituo .texto{
+        font-size: 1em;
+    }
     .course-content .contenidoCurso .textoCurso p{
-        font-size: 0.8em;
+        font-size: 0.9em;
         margin-bottom: -10px;
     }
     .course-content .contenidoCurso ul{
-        font-size: 0.8em;
+        font-size: 0.9em;
+       
+    }
+    .cursosInstituo .cursos{
+        width: 100%;
+    }
+    .course-content{
+        background-image: url(/img/cur1.jpg);
+        background-size: cover;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.308);
+    }
+    .course-content .contenidoCurso{
+        background-color: rgb(8, 6, 17);
+        opacity: 86%;
+    }
+    .course-content .contenidoCurso .imagenCurso{
+        display: none;
+    }
+    .course-content .contenidoCurso .imagenCurso img{
+        width: 100%;
+        height: 100%;
+        display: none;
     }
     .logopie{
         position: absolute;
@@ -916,3 +1324,32 @@ background: linear-gradient(87deg, rgb(190, 85, 20) 0%, rgb(182, 21, 61) 49%, rg
         font-size: 0.6em; /* Tamaño de la fuente */
     }
 }
+@media (max-width: 399px){
+    .carousel-slide img{
+        height: 30vh;
+    }
+    .subtitulos{
+        top:43%;
+    }
+        .subtitulos .capas {
+            width: 100vw;
+            font-size: 0.8rem;
+        }
+        
+        .subtitulos .capas a{
+            padding: 8PX 10PX;
+        
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+        }  
+    }
+    @media (max-width: 334px){
+        .carousel-slide img{
+            height: 25vh;
+        }
+        .subtitulos{
+            top:43%;
+        }
+    }

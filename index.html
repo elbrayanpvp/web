@@ -8,21 +8,29 @@
     <title>inicio</title>
 </head>
 <body>
-    
     <header id="inicio">
-        <div class="menus">
+        <div class="menus" id="menus">
             <div class="logo">
-                <h1>LOGO</h1>
+                <a href="#inicio"><img src="/img/educaya.png" alt=""></a>
             </div>
-            <nav class="navegar">
+            <span class="icon" onclick="toggleMenu()">☰</span>
+            <nav class="navegar" id="navegar">
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#ncursos">Cursos</a></li>
                     <li><a href="#contactenos">Contáctenos</a></li>
                 </ul>
-            
+                <div class="red-menu">
+                    <h2>Nuestras Redes</h2>
+                    <a href=""><i class="fab fa-whatsapp" aria-label="WhatsApp"></i></a>
+                    <a href=""><i class="fab fa-facebook-f" aria-label="Facebook"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i>
+                </div>
+                
             </nav>
+            
         </div>
     
             <!-- baner - carrusel -->
@@ -33,21 +41,24 @@
                     <img src="img/img1.jpg" alt="Imagen 1">
                     <img src="img/img2.jpg" alt="Imagen 2">
                     <img src="img/img3.jpg" alt="Imagen 3">
+                    <img src="img/img4.jpg" alt="Imagen 4">
                 </div>
             
                 <div class="subtitulos">
                     <div class="capas">
-                        
-                            <a href="">INSCRIBETE</a>
-                    
+                        <a href="">INSCRIBETE</a>
                     </div>
                     <div class="capas">
-                            <a href="">INSCRIBETE</a>
+                        <a href="">INSCRIBETE</a>
                     </div>
                     <div class="capas">
-                        
-                            <a href="">INSCRIBETE</a>
-                 
+                        <a href="">INSCRIBETE</a>
+                    </div>
+                    <div class="capas">
+                        <a href="">INSCRIBETE</a>
+                    </div>
+                    <div class="capas">
+                        <a href="">INSCRIBETE</a>
                     </div>
                 </div>
             
@@ -211,25 +222,83 @@
 
     <!--  -->
     <footer id="contactenos">
-            <h1>Contactenos</h1>
-            <div class="redesContac">
-                <a href=""class="whatspie"><i class="fab fa-whatsapp"></i>
-                    WhatsApp</a>
-                <a href=""class="instpie"><i class="fab fa-instagram"></i>Instagram</a>
-                <a href=""class="facbpie"><i class="fab fa-facebook-f"></i>
-                    Faceboock</a>
-                <a href=""class="twipie"><i class="fab fa-twitter"></i>
-                    Twiter</a>
-                    <a href="" class="logopie"><h1>LOGO</h1></a>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h1>Contáctenos</h1>
+                <p><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad, País</p>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> contacto@ejemplo.com</p>
+                <p><i class="fas fa-clock"></i> Lunes - Viernes: 9:00 AM - 6:00 PM</p>
+            </div>
+            <div class="quick-links">
+                <h2>Enlaces</h2>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="#">Contactenos</a></li>
+                </ul>
+            </div>
+            <div class="social-media">
+                <h1>Nuestras Redes</h1>
+                <a href="#" class="social-link whatspie" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-link instpie" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link facbpie" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link twipie" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <div class="logo">
+                    <a href="#inicio"><img src="/img/educaya.png" alt=""></a>
                 </div>
+            </div>
+        </div>
     </footer>
-
     <div class="copyright">
         <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
     </div>
+    <div class="inscribirse">
+        <a href="https://wa.me/tuNumeroDeTelefono" target="_blank"><i class="fab fa-whatsapp"></i> Inscríbete</a>
+    </div>
     
+    <script>
+     window.onscroll = function() {
+    var menus = document.getElementById("menus");
+    if (window.pageYOffset > 0) {
+        menus.classList.add("scrolled");
+        console.log("Clase .scrolled añadida");  // Depuración
+    } else {
+        menus.classList.remove("scrolled");
+        console.log("Clase .scrolled eliminada");  // Depuración
+    }
+};
 
 
+    </script>
+    
+    <script>
+       function toggleMenu() {
+            var content = document.getElementById("navegar");
+            if (content.classList.contains("show")) {
+                content.classList.remove("show");
+            } else {
+                content.classList.add("show");
+            }
+        }
+
+        // Selecciona todos los enlaces del menú
+        var menuLinks = document.querySelectorAll('.navegar a');
+
+        // Añade un event listener a cada enlace
+        menuLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                // Selecciona el contenedor del menú
+                var content = document.getElementById('navegar');
+                // Remueve la clase 'show' para ocultar el menú
+                content.classList.remove('show');
+            });
+        });
+
+        
+
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>
